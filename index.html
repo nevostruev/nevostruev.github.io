@@ -1,6 +1,7 @@
 <html>
 <head>
   <title>nevostruev.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <style type="text/css">
   body {font-family: Verdana, Arial, Helvetica, sans-serif; padding: 0; margin: 0}
@@ -10,6 +11,12 @@
   .links li {list-style-type: none; margin-bottom: 3px;}
   a {text-decoration: none;}
   a:hover {text-decoration: underline;}
+  @media (max-width: 600px) {
+    .photos li:nth-child(2) {display: none;}
+  }
+  @media (max-width: 730px) {
+    .photos li:nth-child(3) {display: none;}
+  }
   </style>
 </head>
 <body>
@@ -30,14 +37,14 @@
     <li><a href="https://coderwall.com/nevostruev">Coderwall</a></li>
   </ul>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-6958048-7', 'auto');
-  ga('send', 'pageview');
-</script>
+    ga('create', 'UA-6958048-7', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>
