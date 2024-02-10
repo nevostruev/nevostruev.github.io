@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to move checked items to a separate list
+            function updateLists() {
+                const checkedItems = document.querySelectorAll('input[type="checkbox"]:checked');
+                const uncheckedItems = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
+                
+                const checkedList = document.getElementById('checkedList');
+                const uncheckedList = document.getElementById('uncheckedList');
+
+                checkedList.innerHTML = '';
+                uncheckedList.innerHTML = '';
+
+                uncheckedItems.forEach(item => {
+                    const label = item.nextElementSibling;
+                    uncheckedList.appendChild(item.parentElement.cloneNode(true));
+                });
+
+                checkedItems.forEach(item => {
+                    const label = item.nextElementSibling;
+                    checkedList.appendChild(item.parentElement.cloneNode(true));
+                });
+            }
+
+            // Add change event listener to checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(item => {
+                item.addEventListener('change', updateLists);
+            });
+
+            // Initial update
+            updateLists();
+        });
+    </script>
+</head>
+<body>
+    <h1>Grocery List</h1>
+    
+    <div id="uncheckedList">
+        <!-- Unchecked items will be listed here -->
+    </div>
+
+    <div id="checkedList">
+        <!-- Checked items will be listed here -->
+    </div>
+
+    <!-- Original list, hidden -->
+    <div style="display:none">
+        <label><input type="checkbox" name="item" value="Bread"> Bread 🍞</label><br>
+        <label><input type="checkbox" name="item" value="Cilantro"> Cilantro (Кинза) 🌿</label><br>
+    </div>
+
+</body>
+</html>
