@@ -4,37 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
+    <style>
+        .item {
+            margin-bottom: 5px; /* Adds space between items */
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Function to move checked items to a separate list
             function updateLists() {
-                const checkedItems = document.querySelectorAll('input[type="checkbox"]:checked');
-                const uncheckedItems = document.querySelectorAll('input[type="checkbox"]:not(:checked)');
-                
                 const checkedList = document.getElementById('checkedList');
                 const uncheckedList = document.getElementById('uncheckedList');
 
+                // Clear current lists
                 checkedList.innerHTML = '';
                 uncheckedList.innerHTML = '';
 
-                uncheckedItems.forEach(item => {
-                    const label = item.nextElementSibling;
-                    uncheckedList.appendChild(item.parentElement.cloneNode(true));
-                });
+                // Clone and move items to the appropriate list
+                document.querySelectorAll('input[type="checkbox"]').forEach(item => {
+                    const clone = item.closest('.item').cloneNode(true);
+                    if(item.checked) {
+                        checkedList.appendChild(clone);
+                    } else {
+                        uncheckedList.appendChild(clone);
+                    }
 
-                checkedItems.forEach(item => {
-                    const label = item.nextElementSibling;
-                    checkedList.appendChild(item.parentElement.cloneNode(true));
+                    // Re-attach event listener to cloned checkboxes
+                    clone.querySelector('input[type="checkbox"]').addEventListener('change', updateLists);
                 });
             }
 
-            // Add change event listener to checkboxes
-            document.querySelectorAll('input[type="checkbox"]').forEach(item => {
-                item.addEventListener('change', updateLists);
+            // Initial cloning and event attachment
+            const items = document.querySelectorAll('.originalList .item');
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                document.getElementById('uncheckedList').appendChild(clone); // Initially add to unchecked list
+                clone.querySelector('input[type="checkbox"]').addEventListener('change', updateLists);
             });
-
-            // Initial update
-            updateLists();
         });
     </script>
 </head>
@@ -42,17 +47,17 @@
     <h1>Grocery List</h1>
     
     <div id="uncheckedList">
-        <!-- Unchecked items will be listed here -->
+        <!-- Unchecked items will appear here -->
     </div>
-
+    
     <div id="checkedList">
-        <!-- Checked items will be listed here -->
+        <!-- Checked items will appear here -->
     </div>
-
+    
     <!-- Original list, hidden -->
-    <div style="display:none">
-        <label><input type="checkbox" name="item" value="Bread"> Bread 🍞</label><br>
-        <label><input type="checkbox" name="item" value="Cilantro"> Cilantro (Кинза) 🌿</label><br>
+    <div class="originalList" style="display:none">
+        <div class="item"><label><input type="checkbox" name="item" value="Bread"> Bread 🍞</label></div>
+        <div class="item"><label><input type="checkbox" name="item" value="Cilantro"> Cilantro (Кинза) 🌿</label></div>
     </div>
 
 </body>
