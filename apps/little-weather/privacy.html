@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Little Weather</title>
+  <meta name="description" content="How Little Weather handles location, weather-provider requests, check-ins, iCloud sync, on-device AI, and support.">
+  <link rel="canonical" href="https://www.nevostruev.com/apps/little-weather/privacy.html">
+  <link rel="icon" type="image/png" href="app-icon.png">
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #193b43; background: #faf7f0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-size: 1rem; line-height: 1.65; }
+    main { max-width: 720px; margin: 0 auto; padding: 64px 24px 40px; }
+    header { margin-bottom: 36px; }
+    .icon { display: block; width: 112px; height: 112px; border-radius: 25px; margin-bottom: 24px; }
+    h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.15; letter-spacing: -0.035em; margin: 0 0 12px; }
+    h2 { font-size: 1.2rem; line-height: 1.35; margin: 28px 0 8px; }
+    p { margin: 0 0 16px; }
+    .subtitle { font-size: 1.25rem; color: #456461; }
+    .intro { font-size: 1.125rem; }
+    .note { background: #ffead2; border-radius: 16px; padding: 20px 24px; margin: 28px 0; }
+    .note p:last-child { margin-bottom: 0; }
+    a { color: #1f6e87; text-underline-offset: 0.2em; overflow-wrap: anywhere; }
+    a:hover { color: #03443f; }
+    a:focus-visible { outline: 3px solid #1f6e87; outline-offset: 4px; border-radius: 2px; }
+    .meta, footer { color: #526763; font-size: 0.9375rem; }
+    footer { border-top: 1px solid #cfddda; margin-top: 40px; padding-top: 20px; }
+    nav { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 12px; }
+    @media (max-width: 480px) { main { padding-top: 36px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="index.html">Little Weather</a>
+      <h1 style="margin-top: 24px">Privacy policy</h1>
+      <p class="meta">Effective November 14, 2026</p>
+    </header>
+    <p>This policy covers the Little Weather iPhone and iPad app, developed by Ivan Nevostruev, and these marketing and privacy pages.</p>
+    <h2>Location and weather requests</h2>
+    <p>Little Weather requests location access only while you use the app. You can decline permission and choose a place on the map. Location is not continuously tracked in the background. Depending on your permission and selection, requests may include precise or approximate coordinates.</p>
+    <p>The app sends selected coordinates to <a href="https://open-meteo.com/en/terms">Open-Meteo</a> for weather forecasts and to the <a href="https://www.weather.gov/privacy">National Weather Service</a> for local alerts. It downloads NOAA buoy and tide station lists and finds nearby stations on your device; requests for observations and predictions include station identifiers. <a href="https://www.noaa.gov/protecting-your-privacy">NOAA’s privacy notice</a> describes its services.</p>
+    <p>These providers receive technical request information such as your IP address and the requested URL. Open-Meteo states that it may retain troubleshooting logs containing geographical coordinates and deletes its log files after 90 days. The NWS privacy notice describes using web-request logs for service traffic statistics and potentially retaining them indefinitely for security. The app does not add an app account, advertising identifier, or persistent user identifier to these requests. Location and technical diagnostics are used for app functionality, not advertising or tracking. Providers control their own request logs and retention; the developer does not operate the weather servers or have access to those logs.</p>
+    <h2>Apple maps, search, and place names</h2>
+    <p>Apple processes map requests, place-search text, and locations used to obtain place names through MapKit and geocoding services. Apple handles these requests under its own settings and policies. See <a href="https://www.apple.com/legal/privacy/data/en/apple-maps/">Apple Maps &amp; Privacy</a>.</p>
+    <h2>Local settings and check-in history</h2>
+    <p>No Little Weather account is required. Temperature and distance preferences, your custom answer prompt, and celebration preferences are stored on your device. Check-ins contain calendar dates only, without a saved location or weather. The app stores check-in dates and modification records locally and automatically backs them up and syncs them through Apple’s private iCloud key-value storage when your Apple account and iCloud are available. The developer cannot read your private iCloud check-in history. The app remains usable for check-ins when iCloud is unavailable.</p>
+    <p>Saved settings and visit records remain until changed, removed, or their app storage is cleared. Remove a visit in the calendar or use Undo after checking in. A removal record containing its date and modification time is retained locally and in iCloud so an offline device does not restore the deleted visit. Sync is a current synchronized copy, not a versioned history archive. Removing the app removes local app data but does not erase iCloud records; visits may return on reinstall. Device and iCloud backups are managed by Apple and your settings. Removing local or iCloud app storage does not delete copies you exported elsewhere.</p>
+    <p>You can revoke location access in iOS Settings. This stops access to device location, but choosing a location manually still sends that selection to providers. Previously sent requests and provider logs are not deleted by revoking permission. Contact a provider under its privacy notice for questions about data it holds; contact the developer below for help understanding the app’s data handling.</p>
+    <h2>Import and clipboard export</h2>
+    <p>Import reads the text you paste or a text file you select, validates its dates on your device, and adds the resulting check-ins to the same local and iCloud storage described above. Export copies check-in dates to the system clipboard. The app does not read the clipboard to export. You choose where to paste or send the exported copy, and other destinations handle it under their own policies.</p>
+    <h2>On-device AI</h2>
+    <p>On supported devices with Apple Intelligence available, Apple’s Foundation Models framework generates the beach answer locally. The model receives the selected place name, current conditions and alerts, your answer prompt, and the latest recorded visit’s date and days elapsed, when present. The app does not send this AI context to the developer or a cloud AI service. The custom prompt is stored locally. When the model is unavailable or generation fails, the app uses a classic answer. AI output can be wrong and is not safety advice.</p>
+    <h2>Analytics, tracking, and website hosting</h2>
+    <p>The app includes no advertising, tracking, or third-party analytics SDKs, and does not sell personal information. Weather-provider request logs are separate from app analytics. These two static web pages contain no analytics scripts, tracking pixels, or cookies set by the developer. They are hosted by GitHub Pages; GitHub may process technical visitor information, including IP addresses, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>.</p>
+    <h2>TestFlight testing</h2>
+    <p>If you install a beta through TestFlight, Apple collects crash logs and usage information and shares them with the developer. Feedback you submit is also shared and may include your name or email address. The developer uses it to troubleshoot and improve the app, retaining it only as needed for that purpose. Apple’s processing is separate from the app’s weather requests and on-device AI. See <a href="https://www.apple.com/legal/privacy/data/en/test-flight/">Apple’s TestFlight privacy notice</a>.</p>
+    <h2>Contact, support, and deletion requests</h2>
+    <p>Email <a href="mailto:little-weather@nevostruev.com">little-weather@nevostruev.com</a> for support or privacy questions. If you email the developer, we receive your address and anything you choose to include. We use that information to respond and retain it only as needed to handle your request. You can request deletion of support information we hold at the same address. We cannot access or delete your private device or iCloud records, or another provider’s logs, on your behalf.</p>
+    <h2>Policy updates</h2>
+    <p>If privacy practices change, this page will be updated with a new effective date.</p>
+    <footer>
+      <nav aria-label="Footer">
+        <a href="index.html">About Little Weather</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="mailto:little-weather@nevostruev.com">Contact &amp; support</a>
+      </nav>
+      <p>Little Weather by Ivan Nevostruev</p>
+    </footer>
+  </main>
+</body>
+</html>
